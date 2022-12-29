@@ -16,7 +16,7 @@ function formatDate(timetamp) {
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.name;
 
@@ -36,21 +36,42 @@ function displayTemperature(response) {
   let iconUrl = `icons/${response.data.weather[0].icon}.svg`;
   iconElement.src = iconUrl;
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function search(city) {
-  let apiUrl =
-    "https://api.openweathermap.org/data/2.5/weather?q=London&appid=e6c2364656962bdcb16bc352fc42569a&&units=metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e6c2364656962bdcb16bc352fc42569a&&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  search(cityInput.value);
+  search(cityInputElement.value);
 }
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("New York");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+search("London");

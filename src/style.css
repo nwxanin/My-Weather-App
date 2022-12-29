@@ -93,10 +93,11 @@ li {
 }
 
 .city-name {
-  margin-top: 10px;
+  margin-top: 50px;
   font-size: 36px;
 }
 .day {
+  margin-top: 20px;
   font-size: 24px;
   font-family: "DM Sans", sans-serif;
 }
