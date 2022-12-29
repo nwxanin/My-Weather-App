@@ -3,6 +3,7 @@
 body {
   font-family: "Yeseva One", cursive;
   background-color: rgba(198, 241, 217, 0.4);
+  color: #5c5470;
 }
 header {
   margin-top: 20px;
@@ -17,6 +18,7 @@ footer {
   max-width: 800px;
   margin: 10px auto;
   font-size: 16px;
+  color: #6643b5;
 }
 ul {
   margin: 0;
@@ -32,7 +34,7 @@ li {
   margin: 10px auto;
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.175);
-  border-radius: 5px;
+  border-radius: 20px;
 }
 .search-form {
   max-width: 500px;
@@ -75,12 +77,14 @@ li {
   color: aliceblue;
   background-color: rgba(4, 74, 66, 0.5);
 }
+
 .info {
   opacity: 80%;
   background-color: transparent;
 
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
-  margin-left: 30px;
+  margin-left: 20px;
+
   text-align: center;
 }
 .info:hover {
@@ -103,11 +107,39 @@ li {
 
 .degree {
   margin-top: 5px;
-  font-size: 38px;
+  font-size: 46px;
   text-align: center;
 }
 .units {
   font-size: 18px;
   position: relative;
   top: -22px;
+}
+.describe {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.wind-humidity {
+  padding: 0 5px;
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: "DM Sans", sans-serif;
+}
+.humidity {
+  margin-top: 30px;
+}
+
+.material-symbols-outlined {
+  font-size: 18px;
+  position: relative;
+  top: 5px;
+}
+
+.git-hub {
+  color: black;
+}
+.git-hub:hover {
+  color: purple;
 }

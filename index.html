@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +21,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -37,28 +43,37 @@
           </button>
         </form>
         <div class="row">
-          <div class="card p-1 col-4 info">
+          <div class="card info" style="width: 9rem">
             icon
             <div class="degree">
-              9<span class="units"
+              <span id="temperature">9</span
+              ><span class="units"
                 ><span class="celsius">°C|</span
                 ><span class="fahrenheit">°F</span>
               </span>
             </div>
 
-            <div class="describ">describe</div>
+            <div class="describe" id="desceription">describe</div>
           </div>
-          <div class="card p-1 col-4 info">
+          <div class="card info" style="width: 13rem">
             <ul>
               <li class="city-name" id="city-name">London</li>
               <li class="day">Friday</li>
               <li class="time">10:20</li>
             </ul>
           </div>
-          <div class="card p-1 col-2 info">
-            <ul>
-              <li>wind speed</li>
-              <li>humidity</li>
+          <div class="card info" style="width: 10rem">
+            <ul class="wind-humidity">
+              <li>
+                <span class="material-symbols-outlined"> wind_power</span> Wind:
+                <span id="wind-speed"></span> km/h
+              </li>
+              <li class="humidity">
+                <span class="material-symbols-outlined">
+                  humidity_percentage
+                </span>
+                Humidity: <span id="humidity"></span>%
+              </li>
             </ul>
           </div>
         </div>
@@ -69,7 +84,7 @@
       <footer>
         <i class="bi bi-code-slash"></i> Designed & Coded by nwxanin
 
-        <a href="https://github.com/nwxanin" target="_blank"
+        <a class="git-hub" href="https://github.com/nwxanin" target="_blank"
           ><i class="bi bi-github"></i
         ></a>
       </footer>
