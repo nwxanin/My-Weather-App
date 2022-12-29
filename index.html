@@ -23,11 +23,13 @@
     <div class="container">
       <header>Weather App</header>
       <div class="weather-app">
-        <form class="input-group">
-          <span class="input-group-text"><i class="bi bi-geo-alt"></i> </span>
+        <form class="input-group search-form" id="search-form">
+          <button type="submit" class="btn btn-outline-primary geo-btn">
+            <i class="bi bi-geo-alt"></i>
+          </button>
           <input
-            type="text"
-            class="form-control"
+            type="search"
+            class="form-control search-text"
             placeholder="Search City..."
           />
           <button type="submit" class="btn btn-outline-primary me-2 search-btn">
@@ -35,17 +37,25 @@
           </button>
         </form>
         <div class="row">
-          <div class="col-4">icon</div>
-          <div class="col-4">
+          <div class="card p-1 col-4 info">
+            icon
+            <div class="degree">
+              9<span class="units"
+                ><span class="celsius">°C|</span
+                ><span class="fahrenheit">°F</span>
+              </span>
+            </div>
+
+            <div class="describ">describe</div>
+          </div>
+          <div class="card p-1 col-4 info">
             <ul>
-              <li>city</li>
-              <li>day</li>
-              <li>time</li>
-              <li>degree</li>
-              <li>describe</li>
+              <li class="city-name" id="city-name">London</li>
+              <li class="day">Friday</li>
+              <li class="time">10:20</li>
             </ul>
           </div>
-          <div class="col-4">
+          <div class="card p-1 col-2 info">
             <ul>
               <li>wind speed</li>
               <li>humidity</li>
