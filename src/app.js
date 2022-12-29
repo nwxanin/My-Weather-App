@@ -15,6 +15,7 @@ function formatDate(timetamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
+  celsiusTemp = response.data.main.temp;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   let cityElement = document.querySelector("#city-name");
@@ -36,8 +37,6 @@ function displayTemperature(response) {
   let iconUrl = `icons/${response.data.weather[0].icon}.svg`;
   iconElement.src = iconUrl;
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  celsiusTemp = response.data.main.temp;
 }
 
 function search(city) {
@@ -51,17 +50,21 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
 function displayFahrenheitTemp(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
 let celsiusTemp = null;
@@ -69,9 +72,9 @@ let celsiusTemp = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 search("London");

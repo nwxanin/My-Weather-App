@@ -116,6 +116,16 @@ li {
   position: relative;
   top: -22px;
 }
+
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+}
+
 .describe {
   font-size: 20px;
 
