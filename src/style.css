@@ -81,10 +81,8 @@ li {
 .info {
   opacity: 80%;
   background-color: transparent;
-
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
   margin-left: 20px;
-
   text-align: center;
 }
 .info:hover {
@@ -94,7 +92,7 @@ li {
 
 .city-name {
   margin-top: 10px;
-  font-size: 32px;
+  font-size: 36px;
 }
 .day {
   font-size: 24px;
@@ -117,8 +115,12 @@ li {
 }
 .describe {
   font-size: 20px;
-  text-transform: capitalize;
+
   font-style: italic;
+}
+
+.describe:first-letter {
+  text-transform: capitalize;
 }
 
 .wind-humidity {
