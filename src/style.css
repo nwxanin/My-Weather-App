@@ -84,10 +84,12 @@ li {
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
   margin-left: 20px;
   text-align: center;
+  transition: all 200ms ease-in;
 }
 .info:hover {
   opacity: 100%;
   background-color: rgba(186, 252, 239, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.175);
 }
 
 .city-name {
