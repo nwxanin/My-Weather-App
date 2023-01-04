@@ -8,32 +8,52 @@ function formatDate(timetamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[date.getDay()];
   return `${day}<br/>${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+
+  forecast.forEach(function (forecastDay, index) {
+    let iconUrl = `icons/${forecastDay.weather[0].icon}.svg`;
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
     <div class="card mb-3 forecast-card" style="max-width: 18rem">
-    <div class="card-header bg-transparent">${day}</div>
-    <div class="card-body-forecast-icon"><img src="icons/01d.svg" alt="" />
-    </div>
-    <div class="card-footer bg-transparent forecast-footer">
-    <span class="max-temp">20°</span>
-    <span class="min-temp">12°</span>
+    <div class="card-header bg-transparent">${formatDay(forecastDay.dt)}</div>
+    <div class="card-body-forecast-icon"><img src=${iconUrl}
+        /></div>
+
+       <div class="card-footer bg-transparent forecast-footer">
+    <span class="max-temp">${Math.round(forecastDay.temp.max)}°</span>
+    <span class="min-temp">${Math.round(forecastDay.temp.min)}°</span>
     </div>
     </div>
     </div>
     
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
