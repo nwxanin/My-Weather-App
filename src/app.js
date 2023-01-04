@@ -13,6 +13,31 @@ function formatDate(timetamp) {
   return `${day}<br/>${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+    <div class="card mb-3 forecast-card" style="max-width: 18rem">
+    <div class="card-header bg-transparent">${day}</div>
+    <div class="card-body-forecast-icon"><img src="icons/01d.svg" alt="" />
+    </div>
+    <div class="card-footer bg-transparent forecast-footer">
+    <span class="max-temp">20°</span>
+    <span class="min-temp">12°</span>
+    </div>
+    </div>
+    </div>
+    
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   celsiusTemp = response.data.main.temp;
@@ -68,6 +93,7 @@ function displayFahrenheitTemp(event) {
 }
 
 let celsiusTemp = null;
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
