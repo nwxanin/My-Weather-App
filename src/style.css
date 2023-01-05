@@ -4,6 +4,7 @@ body {
   font-family: "Yeseva One", cursive;
   color: rgb(255, 253, 253);
   background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 header {
   backdrop-filter: blur(10px);
