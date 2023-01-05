@@ -2,8 +2,7 @@
 
 body {
   font-family: "Yeseva One", cursive;
-  background-color: rgba(198, 241, 217, 0.4);
-  color: #5c5470;
+  color: rgb(255, 253, 253);
 }
 header {
   margin-top: 5px;
@@ -15,10 +14,11 @@ header {
 footer {
   font-family: "DM Sans", sans-serif;
   text-align: center;
-  max-width: 800px;
+  max-width: fit-content;
   margin: 10px auto;
   font-size: 16px;
-  color: #6643b5;
+  color: rgb(255, 253, 253);
+  backdrop-filter: blur(10px);
 }
 ul {
   margin: 0;
@@ -33,7 +33,7 @@ li {
   max-width: 600px;
   margin: 10px auto;
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.175);
+  border: 2px solid rgba(186, 252, 239, 0.2);
   border-radius: 20px;
 }
 .search-form {
@@ -42,14 +42,27 @@ li {
   padding: 5px;
 }
 .search-text {
-  border-top-color: #0a95c0;
-  border-bottom-color: #0a95c0;
+  background-color: transparent;
+  backdrop-filter: brightness(1.5);
+  border-top-color: #3a9188;
+  border-bottom-color: #3a9188;
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
+}
+.search-text::placeholder {
+  color: aliceblue;
+}
+.search-text:focus::placeholder {
+  color: rgba(0, 0, 0, 0.655);
+}
+.search-text:focus {
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px #719ece;
 }
 .geo-btn {
   color: #3a9188;
   background-color: #b8e1dd;
-  border-color: #0a95c0;
+  border-color: #3a9188;
   border-radius: 40px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -66,7 +79,7 @@ li {
   transition: all 200ms ease-in-out;
   color: #3a9188;
   background-color: #b8e1dd;
-  border-color: #0a95c0;
+  border-color: #3a9188;
   border-radius: 30px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -79,7 +92,9 @@ li {
 }
 
 .info {
+  border: 1px solid transparent;
   opacity: 80%;
+  backdrop-filter: blur(10px);
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
   margin-left: 20px;
@@ -88,8 +103,7 @@ li {
 }
 .info:hover {
   opacity: 100%;
-  background-color: rgba(186, 252, 239, 0.2);
-  border: 2px solid rgba(0, 0, 0, 0.175);
+  border: 2px solid rgba(186, 252, 239, 0.2);
 }
 
 .city-name {
@@ -118,7 +132,7 @@ li {
 }
 
 .active {
-  color: black;
+  color: rgb(255, 253, 253);
   cursor: default;
   text-decoration: none;
 }
@@ -128,7 +142,6 @@ li {
 
 .describe {
   font-size: 20px;
-
   font-style: italic;
 }
 
@@ -149,11 +162,12 @@ li {
 .forecast-card {
   font-family: "DM Sans", sans-serif;
   background-color: transparent;
+  backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
   margin-top: 20px;
   margin-left: 12px;
   margin-bottom: 0;
-  color: #5c5470;
+  color: rgb(255, 253, 253);
   text-align: center;
   opacity: 80%;
   transition: all 200ms ease-in;
@@ -184,7 +198,8 @@ li {
   color: black;
 }
 .git-hub:hover {
-  color: purple;
+  color: blueviolet;
+  font-size: 20px;
 }
 
 .netlify {

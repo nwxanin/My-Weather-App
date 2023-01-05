@@ -87,6 +87,9 @@ function displayTemperature(response) {
   let iconUrl = `icons/${response.data.weather[0].icon}.svg`;
   iconElement.src = iconUrl;
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  document.body.style.backgroundImage = `url('imgs/${response.data.weather[0].icon}.jpg')`;
+
   getForecast(response.data.coord);
 }
 
