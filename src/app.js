@@ -46,8 +46,13 @@ function displayForecast(response) {
         /></div>
 
        <div class="card-footer bg-transparent forecast-footer">
-    <span class="max-temp">${Math.round(forecastDay.temp.max)}°</span>
-    <span class="min-temp">${Math.round(forecastDay.temp.min)}°</span>
+    <span class="max-temp"><i class="fa-solid fa-temperature-arrow-up"></i> ${Math.round(
+      forecastDay.temp.max
+    )}°</span><br/>
+    
+    <span class="min-temp"><i class="fa-solid fa-temperature-arrow-down"></i> ${Math.round(
+      forecastDay.temp.min
+    )}°</span>
     </div>
     </div>
     </div>

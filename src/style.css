@@ -3,12 +3,15 @@
 body {
   font-family: "Yeseva One", cursive;
   color: rgb(255, 253, 253);
+  background-size: 100% 100%;
 }
 header {
+  backdrop-filter: blur(10px);
+  max-width: fit-content;
   margin-top: 5px;
   margin-bottom: 10px;
   margin-left: 100px;
-  padding-left: 56px;
+
   font-size: 26px;
 }
 footer {
@@ -43,7 +46,7 @@ li {
 }
 .search-text {
   background-color: transparent;
-  backdrop-filter: brightness(1.5);
+  backdrop-filter: brightness(0.5);
   border-top-color: #3a9188;
   border-bottom-color: #3a9188;
   box-shadow: rgba(0, 0, 0, 0.04) 4px 4px 2px 0;
@@ -152,7 +155,7 @@ li {
 .wind-humidity {
   padding: 0 5px;
   margin-top: 20px;
-  font-size: 12px;
+  font-size: 15px;
   font-family: "DM Sans", sans-serif;
 }
 .humidity {
@@ -186,8 +189,16 @@ li {
 }
 
 .forecast-footer {
-  padding: 0 5px;
+  padding: 0 3px;
 }
+
+.min-temp {
+  color: #0092ca;
+}
+.max-temp {
+  color: #d63447;
+}
+
 .material-symbols-outlined {
   font-size: 18px;
   position: relative;
