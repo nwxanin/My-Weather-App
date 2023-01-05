@@ -70,11 +70,14 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
+  console.log(response);
   celsiusTemp = response.data.main.temp;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.name;
+
+  document.querySelector("#country").innerHTML = response.data.sys.country;
 
   let descriptionElement = document.querySelector("#desceription");
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -136,4 +139,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
 search("Shiraz");
