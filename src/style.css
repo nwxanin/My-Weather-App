@@ -213,14 +213,6 @@ li {
   top: 5px;
 }
 
-.git-hub {
-  color: black;
-}
-.git-hub:hover {
-  color: blueviolet;
+.linkedin:hover {
   font-size: 20px;
-}
-
-.netlify {
-  max-width: 17px;
 }
