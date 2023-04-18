@@ -4,9 +4,14 @@ body {
   font-family: "Yeseva One", cursive;
   color: rgb(255, 253, 253);
   background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
-
+html {
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 header {
   backdrop-filter: blur(10px);
   max-width: fit-content;
